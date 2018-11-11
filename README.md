@@ -1,1 +1,1 @@
-# personal-blog
+This was a personal project I put together for fun. It uses Node.js, Express.js, and several other NPM packages. The rest can be found in the dependencies in package.json.

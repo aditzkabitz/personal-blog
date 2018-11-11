@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">New Post</div>
+    <form class="ui form" action="/blogs" method="POST" enctype="multipart/form-data">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="blog[title]" placeholder="enter title">
+        </div>
+        <div class="field">
+            <label>Thumbnail Image</label>
+            <li>check out <a href="https://unsplash.com/">unsplash</a> for awesome free images</li>
+            <p></p>
+            <input type="file" name="image" id="image" accept="image/*" required>
+        </div>
+        <div class="field">
+            <label>Blog Content - (drag down bottom right corner to expand)
+                <ul>
+                    <li>use &ltp&gtEnter Text Here&lt/p&gt to create a new paragraph</li>
+                    <li>use &ltstrong&gtEnter Text Here&lt/strong&gt to bold text</li>
+                    <li>use &lti&gtEnter Text Here&lt/i&gt to italicize text</li>
+                </ul>
+            </label>
+            <textarea name="blog[body]"></textarea>
+        </div>
+        <input class="ui primary basic button" type="submit">
+    </form>
+</div>
+
+<% include ../partials/footer %>

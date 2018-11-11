@@ -1,0 +1,60 @@
+#logocoffee{
+    font-size: 1em;
+}
+
+.container.main {
+    margin-top: 100px;
+}
+
+#delete {
+    display: inline;
+}
+
+#copyright{
+    text-align: center;
+    font-size: .8em;
+}
+
+#ic{
+    font-size: 1em;
+}
+
+#feed{
+    text-align: center;
+    color: #2185d0;
+}
+
+#none{
+    text-align: center;
+}
+
+#delete-form {
+    display: inline;
+}
+
+#shiftdown{
+    margin: 75px -20px 0 0;
+}
+
+#move{
+    margin: 75px -20px 0 0;
+}
+
+#brandimg{
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+
+#btnright{
+    margin-right: 10px;
+}
+
+#center{
+    text-align: center;
+}
+
+#borderedimg{
+    border: 2px solid #d4d4d5;
+}

@@ -1,0 +1,51 @@
+<% include ../partials/header %>
+
+<div class="ui main text container segment">
+    <div class="row">
+        <div class="col-md-4">
+            <h1 style="text-align: center"><%= user.firstName %> <%= user.lastName %></h1>
+            <div class="thumbnail">
+                <img src="<%= user.avatar %>" alt="user profile image">
+            </div>
+            <% if(currentUser && currentUser.username === user.username) { %>
+                <!--<p style="text-align: center">profile picture change feature coming soon</p>-->
+                <form action="/users/<%= currentUser._id %>" method="POST" enctype="multipart/form-data">
+                    <div class="field">
+                        <label>Edit Profile Picture</label>
+                        <input type="file" name="image" id="image" accept="image/*">
+                    </div>
+                    <p></p>
+                    <input class="ui primary basic button" type="submit">
+                </form>
+                <p></p>
+            <% } %>
+        </div>
+        <div class="col-md-8">
+            <h3 id="center">About</h3>
+            <hr>
+            <%= user.about %>
+            <p></p>
+            <% if(blogs.length > 0) { %>
+                <h3 id="center">Articles written by <%=user.username%></h3>
+                <hr>
+                <% blogs.forEach(function(blog){ %>
+                <p><i><%=blog.created.toDateString()%></i></p>
+                <li><a href="/blogs/<%=blog.id%>"><%= blog.title %></a></li>
+                <% if(blogs.length > 1 && blog !== blogs[blogs.length-1]) { %>
+                    <hr>
+                <% } %>
+                <% }); %>
+            <% } else { %>
+                <div style="text-align: center">
+                    <h3><%=user.username%> hasn't written any articles yet</h3>
+                    <p>But you can check out lots of other cool articles <a href="/blogs">here</a></p>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+
+
+<% include ../partials/footer %>

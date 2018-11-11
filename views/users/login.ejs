@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+
+    <div class="ui huge header" id="feed"></div>
+    <div class="ui top attached segment">
+        <div class="container">
+    <div class="row">
+        <h1 style="text-align: center; color: #db2828!important;">Login</h1>
+        <div style="width: 30%; margin: 25px auto">
+            <form action="/blogs/login" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="username" placeholder="username" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="password" required>
+                </div>
+                <div class="form-group">
+                    <button class="ui red basic button large btn-block">Submit!</button>
+                </div>
+            </form>
+            <h5 style="text-align: center">Not a user? Sign up <a href="/blogs/register">here</a></h5>
+        </div>
+    </div>
+</div>
+    </div>
+
+
+<% include ../partials/footer %>

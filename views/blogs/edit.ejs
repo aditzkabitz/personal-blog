@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit "<%= blog.title %>"</div>
+    <form class="ui form" action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="blog[title]" value="<%= blog.title %>">
+        </div>
+        <div class="field">
+            <label>Image URL</label>
+            <ul>
+                <li>right click on an image and copy the image address, then paste it here</li>
+                <p>for great free images, check out <a href="https://unsplash.com/">unsplash</a></p>
+            </ul>
+            <input type="text" name="blog[image]" value="<%= blog.image %>">
+        </div>
+        <div class="field">
+            <label>Blog Content - (drag down bottom right corner to expand)
+                <ul>
+                    <li>use &ltp&gtEnter Text Here&lt/p&gt to create a new paragraph</li>
+                    <li>use &ltstrong&gtEnter Text Here&lt/strong&gt to bold text</li>
+                    <li>use &lti&gtEnter Text Here&lt/i&gt to italicize text</li>
+                    </li>
+                </ul>
+            </label>
+            <textarea name="blog[body]"><%= blog.body %></textarea>
+        </div>
+        <input class="ui primary basic button" type="submit">
+    </form>
+</div>
+
+<% include ../partials/footer %>

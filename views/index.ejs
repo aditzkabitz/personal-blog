@@ -1,0 +1,38 @@
+<% include ./partials/header %>
+
+<div class="ui main text container" id="move">
+    <div class="ui huge header" id="feed">Feed</div>
+    <p>
+        <form action="/blogs" method="GET" class="form-inline" style="text-align: center">
+            <div id="feed" class="form-group">
+                <input type="text" name="search" placeholder="search for posts" class="form-control">
+                <input type="submit" value="search" class="btn btn-info">
+            </div>
+        </form>
+    </p>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <% for(var i = blogs.length-1; i>=0; i--) { %>
+                <div class="item">
+                    <div class="image">
+                        <img src="<%= blogs[i].image %>" id="borderedimg">
+                    </div>
+                    <div class="content">
+                        <a class="header" href="/blogs/<%= blogs[i]._id %>"><%= blogs[i].title %></a>
+                        <div class="meta">
+                            <span><%= blogs[i].created.toDateString() %> - <%=blogs[i].author.username%></span>
+                        </div>
+                        <div class="extra">
+                            <a class="ui floated basic orange button" href="/blogs/<%= blogs[i]._id %>">
+                                Read More
+                                <i class="right arrow right icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <% } %> 
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>

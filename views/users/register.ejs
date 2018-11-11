@@ -1,0 +1,61 @@
+<% include ../partials/header %>
+
+    <div class="ui huge header" id="feed"></div>
+    <div class="ui top attached segment">
+        <div class="container">
+    <div class="row">
+        <h1 style="text-align: center; color: #00b5ad!important;">Register</h1>
+        <div style="width: 30%; margin: 25px auto">
+            <form action="/blogs/register" method="POST" enctype="multipart/form-data">
+                <label>Username</label>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="username" placeholder="username" maxlength="15" minlength="2" required>
+                </div>
+                <label>Password</label>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="password" minlength="6" maxlength="15" required>
+                </div>
+                <label>First Name</label>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="firstname" placeholder="John" required>
+                </div>
+                <label>Last Name</label>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="lastname" placeholder="Smith" required>
+                </div>
+                <label>Email</label>
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" placeholder="name@email.com" required>
+                </div>
+                <label>Profile Picture</label>
+                <!--<li>Use <a href="https://unsplash.com/">Unsplash</a> for some great images</li>-->
+                <!--<li>right click on image and select "copy image address"</li>-->
+                <!--<p></p>-->
+                <!--<div class="form-group">-->
+                <!--    <input class="form-control" type="text" name="avatar" placeholder="profile picture url">-->
+                <!--</div>-->
+                <!--<form class="ui form" action="/blogs/register" method="POST" enctype="multipart/form-data"></form>-->
+                <div class="field">
+                    <li>check out <a href="https://unsplash.com/">unsplash</a> for awesome free images</li>
+                    <p></p>
+                    <input type="file" name="avatar" id="image" accept="image/*" required>
+                </div>
+                <p></p>
+                <label>About</label>
+                <li>Say a little something about yourself</li>
+                <p></p>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="about" maxlength="250">
+                </div>
+                <div class="form-group">
+                    <button class="ui teal basic button large btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/blogs">Go back</a>
+        </div>
+    </div>
+</div>
+    </div>
+
+
+<% include ../partials/footer %>
